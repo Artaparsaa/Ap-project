@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Myket Store Data Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .chart-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .chart-container img, .chart-container div {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Myket Store Data Analysis</h1>
+        
+        <div class="chart-container">
+            <h2>Top 10 Apps by Installs</h2>
+            <div>{{ charts['top_10_apps'] | safe }}</div>
+        </div>
+        
+        <div class="chart-container">
+            <h2>Rating Distribution</h2>
+            <img src="{{ charts['rating_distribution'] }}" alt="Rating Distribution">
+        </div>
+        
+        <div class="chart-container">
+            <h2>Total Apps by Category</h2>
+            <div>{{ charts['total_apps_by_category'] | safe }}</div>
+        </div>
+        
+        <div class="chart-container">
+            <h2>New Total Apps by Category</h2>
+            <div>{{ charts['new_total_apps_by_category'] | safe }}</div>
+        </div>
+        
+        <div class="chart-container">
+            <h2>Category-wise Rating Distribution Analysis</h2>
+            <img src="{{ charts['category_rating_distribution'] }}" alt="Category-wise Rating Distribution">
+        </div>
+    </div>
+</body>
+</html>
